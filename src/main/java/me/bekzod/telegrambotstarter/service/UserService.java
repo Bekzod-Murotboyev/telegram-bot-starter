@@ -40,7 +40,7 @@ public class UserService {
                             user : userRepository.save(user);
                 });
         return UserDTO
-                .builderByEntity()
+                .builder()
                 .userEntity(userEntity)
                 .build();
     }

@@ -13,14 +13,13 @@ import java.util.Objects;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Builder
 public class UserDTO {
 
     BotState state;
     Language language;
 
 
-    @Builder(builderMethodName = "builderByEntity")
+    @Builder
     public UserDTO(UserEntity userEntity) {
         this.state = userEntity.getState();
         this.language = userEntity.getLanguage();
