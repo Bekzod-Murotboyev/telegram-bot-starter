@@ -30,7 +30,8 @@ public class BotService {
     private final Keyboard keyboard;
 
     public UserDTO checkAndGet(Update update) {
-        return userService.checkAndGet(getMessage(update));
+        Message message = getMessage(update);
+        return userService.checkAndGet(message.getFrom(),message.getChatId());
     }
 
     public void saveChanges(Update update, BotState state) {
@@ -63,7 +64,8 @@ public class BotService {
     public SendMessage getPhoneNumberMenu(Update update) {
         CallbackQuery query = update.getCallbackQuery();
         new Thread(() -> feign.deleteMessage(deleteMessage(query.getMessage()))).start();
-        return sender.sendContactMessage(query.getMessage(), userService.saveLanguage(query), false);
+        return sender.sendContactMessage(query.getMessage(),
+                userService.saveLanguage(query.getData(), query.getMessage().getChatId()), false);
     }
 
     public SendMessage getMainMenuSend(Update update, Language lan) {

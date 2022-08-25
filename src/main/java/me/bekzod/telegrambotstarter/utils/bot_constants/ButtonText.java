@@ -19,8 +19,8 @@ public interface ButtonText {
 
 
     String MY_PHONE_NUMBER = "\uD83D\uDCDE Mening raqamim";
-    String MY_PHONE_NUMBER_KRILL = "\uD83D\uDCDE Mening raqamim(KRILL)";
-    String MY_PHONE_NUMBER_RU = "\uD83D\uDCDE Mening raqamim(RU)";
+    String MY_PHONE_NUMBER_KRILL = "\uD83D\uDCDE Менинг рақамим";
+    String MY_PHONE_NUMBER_RU = "\uD83D\uDCDE Мой номер";
 
 
 }
